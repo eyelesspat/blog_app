@@ -13,3 +13,6 @@ class PostListAPIView(APIView):
         posts = Post.objects.all()
         serializer = PostSerializer(posts, many=True)
         return Response(serializer.data)
+    
+def home(request):
+    return render(request, 'blog/index.html')
